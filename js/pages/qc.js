@@ -123,14 +123,15 @@ document.getElementById('contentArea').insertAdjacentHTML('beforeend', `
 
 `);
 
-function openQCModal(jobRef, product) {
-  const content = `
+document.getElementById('modals').insertAdjacentHTML('beforeend', `
+<div class="modal-overlay hidden" id="modal-qc-entry">
+  <div class="modal modal-lg">
     <div class="modal-header">
       <div>
         <div class="modal-title">Quality Control Audit</div>
-        <div class="modal-sub">Job Ref: ${jobRef} | Product: ${product}</div>
+        <div class="modal-sub" id="qc-modal-subtitle">Job Ref: — | Product: —</div>
       </div>
-      <button class="btn btn-icon" onclick="closeModal()"><i class="bi bi-x"></i></button>
+      <button class="btn btn-icon" onclick="closeModal('modal-qc-entry')"><i class="bi bi-x"></i></button>
     </div>
     <div class="modal-body">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
@@ -185,10 +186,15 @@ function openQCModal(jobRef, product) {
 
     </div>
     <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-red" onclick="closeModal()">Fail / Reject</button>
-      <button class="btn btn-primary" onclick="closeModal()">Pass Inspection</button>
+      <button class="btn btn-outline" onclick="closeModal('modal-qc-entry')">Cancel</button>
+      <button class="btn btn-red" onclick="closeModal('modal-qc-entry')">Fail / Reject</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-qc-entry')">Pass Inspection</button>
     </div>
-  `;
-  openModal(content, '800px');
+  </div>
+</div>
+`);
+
+function openQCModal(jobRef, product) {
+  document.getElementById('qc-modal-subtitle').textContent = `Job Ref: ${jobRef} | Product: ${product}`;
+  openModal('modal-qc-entry');
 }
