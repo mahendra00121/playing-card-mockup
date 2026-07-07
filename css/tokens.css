@@ -1,0 +1,74 @@
+:root {
+  --primary: #003366;
+  --primary-hover: #002850;
+  --primary-light: rgba(0, 51, 102, 0.08);
+  --primary-border: rgba(0, 51, 102, 0.20);
+
+  --bg-app: #f0f2f5;
+  --bg-surface: #ffffff;
+  --bg-sidebar: #001529;
+  --bg-sidebar-item: rgba(255,255,255,0.04);
+  --bg-sidebar-active: rgba(255,255,255,0.12);
+  --bg-header: #ffffff;
+  --bg-grid-header: #e2e8f0;
+  --bg-hover: #f8fafc;
+  --bg-subtle: #f8f9fa;
+
+  --fg-default: #111827;
+  --fg-muted: #6b7280;
+  --fg-subtle: #9ca3af;
+  --fg-inverse: #ffffff;
+  --fg-accent: #003366;
+
+  --bd-default: #e5e7eb;
+  --bd-medium: #d1d5db;
+  --bd-strong: #9ca3af;
+
+  --color-success: #22c55e;
+  --color-success-bg: #f0fdf4;
+  --color-success-text: #15803d;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbeb;
+  --color-warning-text: #92400e;
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  --color-error-text: #b91c1c;
+  --color-info: #3b82f6;
+  --color-info-bg: #eff6ff;
+  --color-info-text: #1d4ed8;
+  --color-orange: #f97316;
+  --color-orange-bg: #fff7ed;
+  --color-orange-text: #c2410c;
+  --color-purple: #8b5cf6;
+  --color-purple-bg: #f5f3ff;
+  --color-purple-text: #6d28d9;
+  --color-cyan: #06b6d4;
+  --color-cyan-bg: #ecfeff;
+  --color-cyan-text: #0e7490;
+
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-xl: 0 8px 32px rgba(0,0,0,0.15);
+
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 60px;
+  --header-height: 52px;
+  --transition: all 0.2s ease;
+}

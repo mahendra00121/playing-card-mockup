@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Playing Card ERP — Mockup</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Logo -->
+    <div class="sidebar-logo" onclick="navigate('dashboard')">
+      <div class="logo-icon">E</div>
+      <div class="logo-text">Estimo ERP<span class="logo-sub">Playing Card Suite</span></div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sidebar-nav" id="sidebarNav">
+
+      <!-- Dashboard -->
+      <div class="nav-section">
+        <div class="nav-solo active" data-page="dashboard" data-tip="Dashboard" onclick="navigate('dashboard')">
+          <span class="nav-icon"><i class="bi bi-grid-1x2-fill"></i></span>
+          <span class="nav-label">Overview Dashboard</span>
+        </div>
+      </div>
+
+      <!-- Dashboards Group -->
+      <div class="nav-section">
+        <div class="nav-section-label">Dashboards</div>
+        <div class="nav-group open" id="grp-dashes">
+          <div class="nav-group-header" onclick="toggleGroup('grp-dashes')" data-tip="Dashboards">
+            <span class="nav-icon"><i class="bi bi-bar-chart-fill"></i></span>
+            <span class="nav-label">Dashboards</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="dash-production" onclick="navigate('dash-production')"><span class="nav-dot"></span>Production</div>
+            <div class="nav-item" data-page="dash-inventory" onclick="navigate('dash-inventory')"><span class="nav-dot"></span>Inventory &amp; Store</div>
+            <div class="nav-item" data-page="dash-purchase" onclick="navigate('dash-purchase')"><span class="nav-dot"></span>Purchase</div>
+            <div class="nav-item" data-page="dash-sales" onclick="navigate('dash-sales')"><span class="nav-dot"></span>Sales</div>
+            <div class="nav-item" data-page="dash-dispatch" onclick="navigate('dash-dispatch')"><span class="nav-dot"></span>Dispatch</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="nav-section">
+        <div class="nav-section-label">AI</div>
+        <div class="nav-solo" data-page="ai-hub" onclick="navigate('ai-hub')" data-tip="AI Hub">
+          <span class="nav-icon"><i class="bi bi-stars"></i></span>
+          <span class="nav-label">AI Command Center</span>
+        </div>
+        <div class="nav-solo" data-page="inventory-agent" onclick="navigate('inventory-agent')" data-tip="Inventory AI">
+          <span class="nav-icon"><i class="bi bi-robot"></i></span>
+          <span class="nav-label">Inventory AI Agent</span>
+        </div>
+      </div>
+
+      <!-- Sales -->
+      <div class="nav-section">
+        <div class="nav-section-label">Sales</div>
+        <div class="nav-group open" id="grp-sales">
+          <div class="nav-group-header" onclick="toggleGroup('grp-sales')" data-tip="Sales">
+            <span class="nav-icon"><i class="bi bi-bag-check"></i></span>
+            <span class="nav-label">Sales</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="enquiry" onclick="navigate('enquiry')"><span class="nav-dot"></span>Sales Enquiry</div>
+            <div class="nav-item" data-page="quotation" onclick="navigate('quotation')"><span class="nav-dot"></span>Quotation</div>
+            <div class="nav-item" data-page="sales-order" onclick="navigate('sales-order')"><span class="nav-dot"></span>Sales Order</div>
+            <div class="nav-item" data-page="so-frequency" onclick="navigate('so-frequency')"><span class="nav-dot"></span>AI Order Intelligence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Production -->
+      <div class="nav-section">
+        <div class="nav-section-label">Production</div>
+        <div class="nav-group open" id="grp-prod">
+          <div class="nav-group-header" onclick="toggleGroup('grp-prod')" data-tip="Production">
+            <span class="nav-icon"><i class="bi bi-gear-wide-connected"></i></span>
+            <span class="nav-label">Production</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="job-card" onclick="navigate('job-card')"><span class="nav-dot"></span>Job Card</div>
+            <div class="nav-item" data-page="prod-tracking" onclick="navigate('prod-tracking')"><span class="nav-dot"></span>Production Tracking</div>
+            <div class="nav-item" data-page="wip" onclick="navigate('wip')"><span class="nav-dot"></span>WIP Tracking</div>
+          </div>
+        </div>
+        <div class="nav-solo" data-page="ppc" onclick="navigate('ppc')" data-tip="PPC">
+          <span class="nav-icon"><i class="bi bi-calendar3-week"></i></span>
+          <span class="nav-label">PPC — Planning</span>
+        </div>
+      </div>
+
+      <!-- Inventory -->
+      <div class="nav-section">
+        <div class="nav-section-label">Inventory</div>
+        <div class="nav-group" id="grp-Cardstock">
+          <div class="nav-group-header" onclick="toggleGroup('grp-Cardstock')" data-tip="Cardstock">
+            <span class="nav-icon"><i class="bi bi-layers"></i></span>
+            <span class="nav-label">Cardstock (Ink/Coating)</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="Cardstock-req" onclick="navigate('Cardstock-req')"><span class="nav-dot"></span>Requisition</div>
+            <div class="nav-item" data-page="Cardstock-po" onclick="navigate('Cardstock-po')"><span class="nav-dot"></span>Purchase Order</div>
+            <div class="nav-item" data-page="Cardstock-receipt" onclick="navigate('Cardstock-receipt')"><span class="nav-dot"></span>GRN / Receipt</div>
+            <div class="nav-item" data-page="Cardstock-po-close" onclick="navigate('Cardstock-po-close')"><span class="nav-dot"></span>PO Close</div>
+            <div class="nav-item" data-page="Cardstock-issue" onclick="navigate('Cardstock-issue')"><span class="nav-dot"></span>Issue to Floor</div>
+            <div class="nav-item" data-page="Cardstock-floor-stock" onclick="navigate('Cardstock-floor-stock')"><span class="nav-dot"></span>Floor Stock</div>
+            <div class="nav-item" data-page="Cardstock-return" onclick="navigate('Cardstock-return')"><span class="nav-dot"></span>Cardstock Return</div>
+            <div class="nav-item" data-page="Cardstock-verification" onclick="navigate('Cardstock-verification')"><span class="nav-dot"></span>Physical Verify</div>
+            <div class="nav-item" data-page="Cardstock-stock" onclick="navigate('Cardstock-stock')"><span class="nav-dot"></span>Stock Report</div>
+          </div>
+        </div>
+        <div class="nav-group" id="grp-Ink/Coating">
+          <div class="nav-group-header" onclick="toggleGroup('grp-Ink/Coating')" data-tip="Ink/Coating">
+            <span class="nav-icon"><i class="bi bi-file-earmark-text"></i></span>
+            <span class="nav-label">Ink &amp; Coating</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="Ink/Coating-req" onclick="navigate('Ink/Coating-req')"><span class="nav-dot"></span>Requisition</div>
+            <div class="nav-item" data-page="Ink/Coating-po" onclick="navigate('Ink/Coating-po')"><span class="nav-dot"></span>Purchase Order</div>
+            <div class="nav-item" data-page="Ink/Coating-receipt" onclick="navigate('Ink/Coating-receipt')"><span class="nav-dot"></span>GRN / Receipt</div>
+            <div class="nav-item" data-page="Ink/Coating-issue" onclick="navigate('Ink/Coating-issue')"><span class="nav-dot"></span>Issue to Floor</div>
+            <div class="nav-item" data-page="Ink/Coating-floor-stock" onclick="navigate('Ink/Coating-floor-stock')"><span class="nav-dot"></span>Floor Stock</div>
+            <div class="nav-item" data-page="Ink/Coating-return" onclick="navigate('Ink/Coating-return')"><span class="nav-dot"></span>Ink/Coating Return</div>
+            <div class="nav-item" data-page="Ink/Coating-stock" onclick="navigate('Ink/Coating-stock')"><span class="nav-dot"></span>Stock Report</div>
+          </div>
+        </div>
+        <div class="nav-solo" data-page="finished-goods" onclick="navigate('finished-goods')" data-tip="Finished Goods">
+          <span class="nav-icon"><i class="bi bi-Deck-seam"></i></span>
+          <span class="nav-label">Finished Goods</span>
+        </div>
+        <div class="nav-solo" data-page="consumables" onclick="navigate('consumables')" data-tip="Consumables">
+          <span class="nav-icon"><i class="bi bi-droplet-fill"></i></span>
+          <span class="nav-label">Tuck Boxes &amp; Packaging</span>
+        </div>
+      </div>
+
+      <!-- Dispatch -->
+      <div class="nav-section">
+        <div class="nav-section-label">Dispatch</div>
+        <div class="nav-group open" id="grp-dispatch">
+          <div class="nav-group-header" onclick="toggleGroup('grp-dispatch')" data-tip="Dispatch">
+            <span class="nav-icon"><i class="bi bi-truck"></i></span>
+            <span class="nav-label">Dispatch</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="dispatch-queue" onclick="navigate('dispatch-queue')"><span class="nav-dot"></span>Dispatch Queue</div>
+            <div class="nav-item" data-page="challan" onclick="navigate('challan')"><span class="nav-dot"></span>Delivery Challan</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product & Job -->
+      <div class="nav-section">
+        <div class="nav-section-label">Operations</div>
+        <div class="nav-solo" data-page="product-master" onclick="navigate('product-master')" data-tip="Product Master">
+          <span class="nav-icon"><i class="bi bi-Decks"></i></span>
+          <span class="nav-label">Product Master</span>
+        </div>
+        <div class="nav-solo" data-page="job-prep" onclick="navigate('job-prep')" data-tip="Job Preparation">
+          <span class="nav-icon"><i class="bi bi-journal-text"></i></span>
+          <span class="nav-label">Job Preparation</span>
+        </div>
+        <div class="nav-solo" data-page="purchase-req" onclick="navigate('purchase-req')" data-tip="Purchase Req">
+          <span class="nav-icon"><i class="bi bi-receipt"></i></span>
+          <span class="nav-label">Purchase Req.</span>
+        </div>
+      </div>
+
+      <!-- Reports -->
+      <div class="nav-section">
+        <div class="nav-section-label">Reports</div>
+        <div class="nav-group open" id="grp-reports">
+          <div class="nav-group-header" onclick="toggleGroup('grp-reports')" data-tip="Reports">
+            <span class="nav-icon"><i class="bi bi-bar-chart-line"></i></span>
+            <span class="nav-label">Reports</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="est-vs-actual" onclick="navigate('est-vs-actual')"><span class="nav-dot"></span>Est. vs Actual</div>
+            <div class="nav-item" data-page="kpi-dashboard" onclick="navigate('kpi-dashboard')"><span class="nav-dot"></span>KPI Dashboard</div>
+            <div class="nav-item" data-page="mgmt-dashboard" onclick="navigate('mgmt-dashboard')"><span class="nav-dot"></span>Mgmt Dashboard</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Masters -->
+      <div class="nav-section">
+        <div class="nav-section-label">Configuration</div>
+        <div class="nav-group" id="grp-masters">
+          <div class="nav-group-header" onclick="toggleGroup('grp-masters')" data-tip="Masters">
+            <span class="nav-icon"><i class="bi bi-sliders2"></i></span>
+            <span class="nav-label">Masters</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="m-Ink/Coating" onclick="navigate('m-Ink/Coating')"><span class="nav-dot"></span>Ink/Coating Master</div>
+            <div class="nav-item" data-page="m-Cardstock" onclick="navigate('m-Cardstock')"><span class="nav-dot"></span>Cardstock Master</div>
+            <div class="nav-item" data-page="m-item" onclick="navigate('m-item')"><span class="nav-dot"></span>Item Master</div>
+            <div class="nav-item" data-page="m-material-group" onclick="navigate('m-material-group')"><span class="nav-dot"></span>Material Group</div>
+            <div class="nav-item" data-page="m-category" onclick="navigate('m-category')"><span class="nav-dot"></span>Category</div>
+            <div class="nav-item" data-page="m-unit" onclick="navigate('m-unit')"><span class="nav-dot"></span>Unit of Measure</div>
+            <div class="nav-item" data-page="m-hsn" onclick="navigate('m-hsn')"><span class="nav-dot"></span>Product HSN</div>
+            <div class="nav-item" data-page="m-warehouse" onclick="navigate('m-warehouse')"><span class="nav-dot"></span>Warehouse</div>
+            <div class="nav-item" data-page="m-mill" onclick="navigate('m-mill')"><span class="nav-dot"></span>Mill Master</div>
+            <div class="nav-item" data-page="m-machine" onclick="navigate('m-machine')"><span class="nav-dot"></span>Machine</div>
+            <div class="nav-item" data-page="m-department" onclick="navigate('m-department')"><span class="nav-dot"></span>Department</div>
+            <div class="nav-item" data-page="m-process" onclick="navigate('m-process')"><span class="nav-dot"></span>Process</div>
+            <div class="nav-item" data-page="m-die" onclick="navigate('m-die')"><span class="nav-dot"></span>Die Master</div>
+            <div class="nav-item" data-page="m-division" onclick="navigate('m-division')"><span class="nav-dot"></span>Division</div>
+            <div class="nav-item" data-page="m-vehicle" onclick="navigate('m-vehicle')"><span class="nav-dot"></span>Vehicle</div>
+            <div class="nav-item" data-page="m-employee" onclick="navigate('m-employee')"><span class="nav-dot"></span>Employee</div>
+            <div class="nav-item" data-page="m-user" onclick="navigate('m-user')"><span class="nav-dot"></span>User Master</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ledger Group -->
+      <div class="nav-section">
+        <div class="nav-section-label">Ledgers</div>
+        <div class="nav-group" id="grp-ledger">
+          <div class="nav-group-header" onclick="toggleGroup('grp-ledger')" data-tip="Ledgers">
+            <span class="nav-icon"><i class="bi bi-book"></i></span>
+            <span class="nav-label">Ledgers</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="m-ledger-customer" onclick="navigate('m-ledger-customer')"><span class="nav-dot"></span>Customers</div>
+            <div class="nav-item" data-page="m-ledger-supplier" onclick="navigate('m-ledger-supplier')"><span class="nav-dot"></span>Suppliers</div>
+            <div class="nav-item" data-page="m-ledger-transporter" onclick="navigate('m-ledger-transporter')"><span class="nav-dot"></span>Transporters</div>
+            <div class="nav-item" data-page="m-ledger-consignee" onclick="navigate('m-ledger-consignee')"><span class="nav-dot"></span>Consignees</div>
+            <div class="nav-item" data-page="m-ledger-employee" onclick="navigate('m-ledger-employee')"><span class="nav-dot"></span>Employees</div>
+            <div class="nav-item" data-page="m-ledger-duties-taxes" onclick="navigate('m-ledger-duties-taxes')"><span class="nav-dot"></span>Duties &amp; Taxes</div>
+            <div class="nav-item" data-page="m-ledger-purchase" onclick="navigate('m-ledger-purchase')"><span class="nav-dot"></span>Purchase Accounts</div>
+            <div class="nav-item" data-page="m-ledger-sales" onclick="navigate('m-ledger-sales')"><span class="nav-dot"></span>Sales Accounts</div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+      <button class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
+        <i class="bi bi-layout-sidebar-reverse" id="toggleIcon"></i>
+      </button>
+      <span class="sidebar-footer-text">v2.4.0 — June 2026</span>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN AREA ═══ -->
+  <div class="main-area">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-breadcrumb" id="headerBreadcrumb">
+        <span class="breadcrumb-item">Estimo</span>
+        <span class="breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+        <span class="breadcrumb-item current" id="currentPageTitle">Dashboard</span>
+      </div>
+      <div class="header-actions">
+        <button class="header-icon-btn" title="Alerts">
+          <i class="bi bi-bell"></i>
+          <span class="notif-badge">5</span>
+        </button>
+        <button class="header-icon-btn" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="header-icon-btn" title="Settings">
+          <i class="bi bi-gear"></i>
+        </button>
+        <div class="user-avatar" title="Mahendra">M</div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content-area" id="contentArea">
+
+      <!-- All pages injected here by JS -->
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODALS CONTAINER ═══ -->
+<div id="modals"></div>
+
+<script src="js/pages/dashboard.js"></script>
+<script src="js/pages/enquiry.js"></script>
+<script src="js/pages/sales-order.js"></script>
+<script src="js/pages/quotation.js"></script>
+<script src="js/pages/job-card.js"></script>
+<script src="js/pages/prod-tracking.js"></script>
+<script src="js/pages/wip.js"></script>
+<script src="js/pages/ppc.js"></script>
+<script src="js/pages/inventory.js"></script>
+<script src="js/pages/finished-goods.js"></script>
+<script src="js/pages/consumables.js"></script>
+<script src="js/pages/dispatch.js"></script>
+<script src="js/pages/challan.js"></script>
+<script src="js/pages/product-master.js"></script>
+<script src="js/pages/job-prep.js"></script>
+<script src="js/pages/purchase-req.js"></script>
+<script src="js/pages/reports.js"></script>
+<script src="js/pages/masters.js"></script>
+<script src="js/pages/masters-extra.js"></script>
+<script src="js/pages/ledgers.js"></script>
+<script src="js/pages/inventory-extra.js"></script>
+<script src="js/pages/ai-pages.js"></script>
+<script src="js/pages/dashboards.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

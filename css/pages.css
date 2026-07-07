@@ -1,0 +1,84 @@
+/* ─── Page-specific overrides ─── */
+
+/* Dashboard welcome gradient */
+#page-dashboard .page-title {
+  background: linear-gradient(135deg, var(--primary), #0066cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Production tracking board full height */
+#page-prod-tracking .kanban-board { min-height: 480px; }
+
+/* Make tables inside modals scrollable if very long */
+.modal-body .grid-wrap { max-height: 320px; overflow-y: auto; }
+
+/* Scrollable modal body */
+.modal-body { max-height: calc(90vh - 160px); overflow-y: auto; }
+
+/* Indent items in line table */
+.line-table tbody td .form-input,
+.line-table tbody td .form-select { min-width: 0; }
+
+/* Kpi card hover */
+.kpi-card { transition: box-shadow 0.15s, transform 0.15s; cursor: default; }
+.kpi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+/* Tag in table cells */
+.data-table .tag { display: inline-flex; }
+
+/* Clickable rows */
+.data-table tbody tr { cursor: pointer; }
+
+/* Compact header for grid sections in dashboard */
+.card .data-table thead th { padding: 8px 10px; font-size: 11px; }
+.card .data-table tbody td { padding: 7px 10px; font-size: 12px; }
+
+/* Alert inside modal without extra margin */
+.modal-body .alert { margin-bottom: 12px; }
+
+/* WIP emoji check/cross size */
+#page-wip .data-table td[style*="text-align:center"] { font-size: 16px; line-height: 1; }
+
+/* Kanban board scroll */
+.kanban-board { scrollbar-width: thin; scrollbar-color: var(--bd-medium) transparent; }
+.kanban-board::-webkit-scrollbar { height: 6px; }
+.kanban-board::-webkit-scrollbar-thumb { background: var(--bd-medium); border-radius: 3px; }
+
+/* PPC schedule table — alternate row colors */
+#page-ppc .data-table tbody tr:nth-child(even) { background: #fafbfc; }
+
+/* Management dashboard top icons */
+#page-mgmt-dashboard .bi { line-height: 1; }
+
+/* Print challan preview */
+#modal-challan-view .modal-body { font-size: 13px; }
+
+/* Tab active highlight */
+.seg-tabs .seg-tab { cursor: pointer; user-select: none; }
+
+/* Form section separator */
+.form-section + .form-section { border-top: 1px solid var(--bd-default); padding-top: 14px; }
+
+/* Inventory stock report — color cells */
+.data-table .tag-green { font-size: 11px; }
+.data-table .tag-red { font-size: 11px; }
+.data-table .tag-gold { font-size: 11px; }
+
+/* Responsive sidebar on smaller screens */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 210px;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar { position: fixed; z-index: 200; height: 100vh; }
+  .sidebar:not(.collapsed) { box-shadow: var(--shadow-xl); }
+  .main-area { margin-left: 0 !important; }
+  .form-row.cols-3, .form-row.cols-4 { grid-template-columns: 1fr 1fr; }
+  .form-row.cols-2 { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .modal { max-width: 98vw !important; width: 98vw !important; }
+  .modal-xl, .modal-lg, .modal-md { width: 98vw !important; }
+}
