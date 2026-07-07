@@ -183,6 +183,22 @@
         </div>
       </div>
 
+      <!-- Quality Control -->
+      <div class="nav-section">
+        <div class="nav-section-label">Quality Control</div>
+        <div class="nav-group open" id="grp-qc">
+          <div class="nav-group-header" onclick="toggleGroup('grp-qc')" data-tip="Quality Control">
+            <span class="nav-icon"><i class="bi bi-shield-check"></i></span>
+            <span class="nav-label">Quality Control</span>
+            <span class="nav-chevron"><i class="bi bi-chevron-right"></i></span>
+          </div>
+          <div class="nav-group-items">
+            <div class="nav-item" data-page="qc-dashboard" onclick="navigate('qc-dashboard')"><span class="nav-dot"></span>QC Dashboard</div>
+            <div class="nav-item" data-page="qc-entry" onclick="navigate('qc-entry')"><span class="nav-dot"></span>QC Entry / Audit</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Reports -->
       <div class="nav-section">
         <div class="nav-section-label">Reports</div>
@@ -316,6 +332,7 @@
 <script src="js/pages/product-master.js"></script>
 <script src="js/pages/job-prep.js"></script>
 <script src="js/pages/purchase-req.js"></script>
+<script src="js/pages/qc.js"></script>
 <script src="js/pages/reports.js"></script>
 <script src="js/pages/masters.js"></script>
 <script src="js/pages/masters-extra.js"></script>

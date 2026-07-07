@@ -16,6 +16,8 @@ const PAGE_META = {
   'prod-tracking':  { title: 'Production Tracking',  section: 'Production' },
   'wip':            { title: 'WIP Tracking',         section: 'Production' },
   'ppc':            { title: 'PPC — Production Planning', section: 'Production' },
+  'qc-dashboard':   { title: 'QC Dashboard',         section: 'Quality Control' },
+  'qc-entry':       { title: 'QC Entry / Audit',     section: 'Quality Control' },
   'Cardstock-req':       { title: 'Cardstock Requisition',     section: 'Inventory › Cardstock' },
   'Cardstock-po':        { title: 'Cardstock Purchase Order',  section: 'Inventory › Cardstock' },
   'Cardstock-receipt':   { title: 'Cardstock GRN',             section: 'Inventory › Cardstock' },
